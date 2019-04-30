@@ -27,3 +27,11 @@ Route::get('/user/name', 'User\UserController@name');
 // 3.未通过中间件的请求将被重定向到主页
 // 4.通过中间件的的请求将达到指定的控制器，实现相应动作
 Route::get('/young/{age}', 'UserController@young')->middleware('young');
+
+Route::get('bladeview', 'HomeController@home');
+
+Route::get('myspace', 'StaticPagesController@myspace')->name('myspace');
+
+Route::get('news', 'StaticPagesController@news')->name('news');
+
+Route::resource('articles', 'ArticlesController');
